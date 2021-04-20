@@ -74,5 +74,14 @@
     <ClInclude Include="Allocator\QAllocator.h">
       <Filter>0.공간할당자%28Allocator%29</Filter>
     </ClInclude>
+    <ClInclude Include="LinearStructure\QSinglyLinkedList.h">
+      <Filter>1.선형구조\2%29연결리스트\[1]단순연결리스트</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearStructure\QVector.h">
+      <Filter>1.선형구조\1%29순차리스트\[2]벡터</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
 </Project>

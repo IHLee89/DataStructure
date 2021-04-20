@@ -1,4 +1,6 @@
 #include "Allocator/QAllocator.h"
+#include "LinearStructure/QSinglyLinkedList.h"
+#include "LinearStructure/QVector.h"
 #include <list>
 #include <vector>
 
@@ -6,18 +8,29 @@ using namespace std;
 
 int main()
 {
+	std::list<int> cc;
+	std::list<int>::iterator cIter;
+
 	std::vector<int, QAllocator<int>> a;
 	a.reserve(50);
 	a.push_back(1);
-
-/*
-	"warning STL4010: Various members of std::allocator are deprecated in C++17."
-	"Use std::allocator_traits instead of accessing these members directly."
-	"You can define _SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning."
-*/
-
 	a.push_back(3);
 	auto size = a.max_size();
+
+	std::QSinglyLinkedList<int> qList;
+	auto z1 = qList.push_front(1);
+	auto z2 = qList.push_front(2);
+	auto z3 = qList.push_front(3);
+	auto z4 = z3++;
+	auto z5 = ++z3;
+
+	qList.pop_front();
+	for (auto& data : qList)
+	{
+		std::cout << "qList : " << data << std::endl;
+	}
+
+	
 
 	return 0;
 }
